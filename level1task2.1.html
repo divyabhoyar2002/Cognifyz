@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Color Changer</title>
+    <style type="text/css">
+        /* styles.css */
+#colorButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: lightblue;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#colorButton:focus {
+    outline: none;
+}
+
+    </style>
+</head>
+<body>
+    <button id="colorButton">I can change color When you Click me!</button>
+    <script src="script.js"></script>
+</body>
+<script type="text/javascript">
+    // script.js
+document.addEventListener('DOMContentLoaded', (event) => {
+    const button = document.getElementById('colorButton');
+
+    button.addEventListener('click', () => {
+        // Generate a random color
+        const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+
+        // Set the new color to the button's background
+        button.style.backgroundColor = randomColor;
+    });
+});
+
+</script>
+</html>
